@@ -1,4 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
 main {
   display:flex;
-  background-color: red;
+  background-color:#CDCCD1;
+
+  img{
+    width: 65%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  section{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 100vh;
+    justify-content: center;
+    place-items: center;
+    row-gap: 20px;
+
+    p{
+      font-family: 'Delius', cursive;
+      width: 65%;
+      text-align: center;
+      color: #3A3A5E;
+      font-size: 15px;
+    }
+
+    .homeLog{
+      font-family: 'Delius', cursive;
+      display: flex;
+      justify-content: space-around;
+      width: 70%;
+      color: #3A3A5E;
+      font-size: 15px;
+      font-weight: bolder;
+      margin-bottom: 15px;
+
+      .logActive{
+        text-shadow: 0px 10px 10px 0px rgba(26, 25, 39, 0.34);
+        font-style: normal;
+        line-height: normal;
+        text-decoration-line: underline;
+      }
+
+      .logInactive{
+        color: #85849b
+      }
+    }
+
+    app-login{
+      width: 60%;
+    }
+
+    .buttonGoogle{
+      padding: 7px;
+      width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 2px solid #3a3a5eab;
+
+      img{
+        width: 15px;
+        height: auto;
+        margin-right: 8px;
+      }
+
+      span{
+        font-family: 'Delius', cursive;
+        color: #3A3A5E;
+      }
+    }
+  }
+
+
+
 }

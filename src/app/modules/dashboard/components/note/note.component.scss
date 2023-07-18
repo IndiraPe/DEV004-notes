@@ -1,0 +1,81 @@
+section{
+  flex: 2;
+  padding: 20px 30px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  .noteContainer{
+    width: 250px;
+
+    .noteHeader{
+      background-color: #5C5C83;
+      height: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      img{
+        margin-top: 2px;
+        height: 28px;
+        margin-inline: 7px;
+        object-fit: contain;
+      }
+      .noteButtons{
+        display: flex;
+        width: 120px;
+        margin-right: 7px;
+
+        button{
+          flex: 1;
+          background: transparent;
+          border: none;
+          color: #f4f4f4;
+          font-family: 'Delius', cursive;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .noteBody{
+      padding: 15px 10px 10px 15px;
+      background-color: #E4E3E8;
+      color: #3A3A5E;
+      text-align: justify;
+
+      h4{
+        margin-bottom: 10px;
+      }
+      p{
+        max-height: 300px;
+        overflow: scroll;
+        padding-right: 5px;
+      }
+      p::-webkit-scrollbar {
+        -webkit-appearance: none;
+      }
+
+      p::-webkit-scrollbar:vertical {
+        width:5px;
+      }
+
+      p::-webkit-scrollbar:horizontal {
+        height: 10px;
+      }
+
+      p::-webkit-scrollbar-thumb {
+        background-color: #3A3A5E;
+        border-radius: 20px;
+      }
+
+      p::-webkit-scrollbar-track {
+        border-radius: 10px;
+      }
+      p::-webkit-scrollbar-corner{
+        display: none;
+      }
+
+    }
+  }
+
+}
+

@@ -1,0 +1,22 @@
+nav{
+  display: flex;
+  justify-content: space-between;
+  background-color:#CDCCD1;
+
+  app-logo{
+    transform: scale(.6);
+    margin-left: -35px;
+  }
+
+  button{
+    background: transparent;
+    border: none;
+    margin-right: 15px;
+    cursor: pointer;
+
+    .material-symbols-outlined{
+      font-size: 30px;
+      color: #3A3A5E;
+    }
+  }
+}

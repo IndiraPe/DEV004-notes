@@ -1,1 +1,25 @@
-<p>login works!</p>
+<form [formGroup]="loginForm">
+  <div class="group">
+    <input type="email"
+      id="formEmail"
+      name="mail"
+      formControlName="email">
+    <label for="formEmail">Ingresa tu email...</label>
+  </div>
+  <div class="group">
+    <input
+      [type]="showPassword?'text':'password'"
+      id="formPassword"
+      name="password"
+      formControlName="password">
+    <label for="formPassword">Ingresa tu contraseña...</label>
+  </div>
+  <button class="icon">
+    <span class="material-symbols-outlined" *ngIf="!showPassword" (click)="toggleShow()">visibility</span>
+    <span class="material-symbols-outlined" *ngIf="showPassword" (click)="toggleShow()">visibility_off</span>
+  </button>
+  <div class="messageError" *ngIf="false">Soy el error</div>
+  <button type="submit" id="buttonLogin">
+    Iniciar sesión
+  </button>
+</form>
