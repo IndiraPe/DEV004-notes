@@ -4,17 +4,25 @@
     <app-logo></app-logo>
     <p>Bienvenido(a)!!!, regístrate o inicia sesión para empezar a guardar tus notas y secretos aquí.</p>
     <div class="homeLog">
-      <a class="logActive">INICIAR SESIÓN</a>
-      <a class="logInactive">REGISTRARSE</a>
+      <a class="logInactive"
+        (click)="onChangeClassLogin()"
+        [ngClass]="{'logActive':statusLogin === true}">
+        INICIAR SESIÓN
+      </a>
+      <a class="logInactive"
+        (click)="onChangeClassRegister()"
+        [ngClass]="{'logActive':statusRegister === true}">
+        REGISTRARSE
+      </a>
     </div>
-    <app-login></app-login>
+    <app-login *ngIf="statusLogin"></app-login>
+    <app-register *ngIf="statusRegister"></app-register>
     <p>o ingresa con</p>
-    <button class="buttonGoogle">
+    <button class="buttonGoogle" (click)="loginGoogle()">
       <img src="../../../../assets/google.png">
       <span>
         Cuenta de Google
       </span>
     </button>
-<!--     <app-register></app-register> -->
   </section>
 </main>

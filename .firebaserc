@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "labnotesangular": {
+      "hosting": {
+        "labnote": [
+          "labnotesangular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "labnotesangular"
+  }
+}

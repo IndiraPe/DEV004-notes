@@ -1,1 +1,31 @@
-<p>register works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="createAccount()">
+  <div class="group">
+    <input type="email"
+      id="formEmail"
+      name="mail"
+      formControlName="email"
+      (click)="statusErrorEmail=false">
+    <label for="formEmail">Ingresa o crea tu email...</label>
+    <div class="messageError"
+      *ngIf="statusErrorEmail">
+      {{showMessageErrorEmail}}
+    </div>
+  </div>
+  <div class="group">
+    <input
+      [type]="showPassword?'text':'password'"
+      id="formPassword"
+      name="password"
+      formControlName="password"
+      (click)="statusErrorPassword=false">
+    <label for="formPassword">Crea tu contraseña...</label>
+    <div class="messageError" *ngIf="statusErrorPassword">{{showMessageErrorPassword}}</div>
+  </div>
+  <button class="icon">
+    <span class="material-symbols-outlined" *ngIf="!showPassword" (click)="toggleShow()">visibility</span>
+    <span class="material-symbols-outlined" *ngIf="showPassword" (click)="toggleShow()">visibility_off</span>
+  </button>
+  <button type="submit" id="buttonRegister">
+    Registrarse
+  </button>
+</form>

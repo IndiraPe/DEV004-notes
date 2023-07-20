@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm">
+<form [formGroup]="loginForm" (ngSubmit)="loginAccount()">
   <div class="group">
     <input type="email"
       id="formEmail"
@@ -18,7 +18,7 @@
     <span class="material-symbols-outlined" *ngIf="!showPassword" (click)="toggleShow()">visibility</span>
     <span class="material-symbols-outlined" *ngIf="showPassword" (click)="toggleShow()">visibility_off</span>
   </button>
-  <div class="messageError" *ngIf="false">Soy el error</div>
+  <div class="messageError" *ngIf="statusError">{{showMessageError}}</div>
   <button type="submit" id="buttonLogin">
     Iniciar sesión
   </button>

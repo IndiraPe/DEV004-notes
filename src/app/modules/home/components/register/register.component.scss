@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+  font-family: 'Delius', cursive;
+
+  .group {
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+
+    input{
+      width: 92%;
+      padding: 5px 10px 5px 5px;
+      appearance: none;
+      background: none;
+      border: none;
+      border-bottom: 2px solid #3A3A5E;
+    }
+    input:focus {
+      outline: none;
+    }
+
+    label {
+      color: #85849b;
+      font-size: 15px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 5px;
+      transition: all 0.2s ease;
+    }
+
+    input:focus ~ label, input.used ~ label {
+      top: -20px;
+      left: -10px;
+      display: block;
+      transform: scale(.80);
+      color: #3A3A5E;
+    }
+    .messageError{
+      color: rgb(206, 2, 2);
+      position: absolute;
+      margin-top: 2px;
+      margin-left: 4px;
+      font-size: 13px;
+    }
+
+  }
+  .icon{
+    height: 25px;
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 7%;
+    margin-top: 4.8%;
+    padding-top: 3px;
+    padding-right: 15px;
+    color: #3A3A5E;
+  }
+
+
+  #buttonRegister{
+    margin-top: 20px;
+    color: #f4f4f4;
+    background-color: #3A3A5E;
+    font-family: 'Delius', cursive;
+    padding: 7px;
+    width: 180px;
+  }
+
+}

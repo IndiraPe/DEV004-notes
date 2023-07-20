@@ -1,14 +1,28 @@
-
 <main>
   <aside>
-    <h3>Hola Kira!!!</h3>
+    <h3>Hola {{nameUser}}!!!</h3>
     <p>Agrega nuevas notas</p>
-    <form>
+    <form [formGroup]="noteForm" (ngSubmit)="saveNote()">
       <!-- <label>Título de la nota</label> -->
-      <input placeholder="Título de la nota...">
+      <input
+        placeholder="Título de la nota aquí, max 30 letras..."
+        formControlName="tittle"
+        [(ngModel)]="note.tittle"
+        maxlength="30"
+        (click)="statusNoteTittle=false"
+        required>
+      <div class="noteError1" *ngIf="statusNoteTittle">*Campo obligatorio</div>
       <!-- <label>Nota</label> -->
-      <textarea placeholder="Redacta tu nota aquí..."></textarea>
-      <button>Guardar</button>
+      <textarea
+        placeholder="Redacta tu nota aquí, máximo 1500 letras..."
+        formControlName="body"
+        [(ngModel)]="note.body"
+        maxlength="1500"
+        (click)="statusNoteBody=false"
+        required>
+      </textarea>
+      <div class="noteError2" *ngIf="statusNoteBody">*Campo obligatorio</div>
+      <button type="submit">Guardar</button>
     </form>
     <img src="../../../../assets/lunalive.gif" alt="Gato negro moviendo colita">
   </aside>

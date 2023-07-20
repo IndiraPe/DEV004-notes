@@ -30,6 +30,7 @@ main{
       display: flex;
       flex-direction: column;
       row-gap: 25px;
+      position: relative;
 
       input{
         padding: 5px 10px 5px 5px;
@@ -43,6 +44,16 @@ main{
         font-family: 'Delius', cursive;
         padding: 5px 10px 5px 5px;
         color: #3A3A5E;
+      }
+
+      .noteError1, .noteError2{
+        color: rgb(239, 7, 7);
+        position: absolute;
+        margin-top: 32px;
+        font-size: 13px;
+      }
+      .noteError2{
+        margin-top: 188px;
       }
 
       button{

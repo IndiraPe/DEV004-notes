@@ -9,7 +9,7 @@ form{
 
   .group {
     position: relative;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     width: 100%;
 
     input{
@@ -59,17 +59,19 @@ form{
 
   .messageError{
     color: rgb(206, 2, 2);
-    margin-top: -25px;
-    margin-bottom: 20px;
-    font-size: 14px;
+    margin-top: 110px;
+    font-size: 13px;
+    position: absolute;
   }
 
   #buttonLogin{
+    margin-top: 20px;
     color: #f4f4f4;
     background-color: #3A3A5E;
     font-family: 'Delius', cursive;
     padding: 7px;
     width: 180px;
+    cursor: pointer;
   }
 
 }

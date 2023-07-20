@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 @Component({
@@ -10,4 +12,16 @@ import { Component } from '@angular/core';
 
 export class HeaderComponent {
 
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
+
+  logOut(){
+    this.authService.logout()
+      .then(() => {
+        this.router.navigate(['/home']);
+      })
+      .catch(error => console.log(error));
+  }
 }
