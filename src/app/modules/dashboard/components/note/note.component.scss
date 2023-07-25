@@ -1,6 +1,5 @@
 section{
-  flex: 2;
-  padding: 20px 30px;
+  padding: 20px 20px;
   display: inline-flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -49,6 +48,7 @@ section{
         max-height: 300px;
         overflow: scroll;
         padding-right: 5px;
+        font-size: 13px;
       }
       p::-webkit-scrollbar {
         -webkit-appearance: none;

@@ -35,7 +35,8 @@ export class HomeComponent {
   loginGoogle(){
     this.authService.loginWithGoogle()
       .then(response => {
-        console.log(response);
+        localStorage.setItem('uid', response.user.uid);
+        localStorage.setItem('email', response.user.email as string);
         this.router.navigate(['/dashboard']);
       })
       .catch(error => console.log(error))

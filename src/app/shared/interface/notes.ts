@@ -3,4 +3,6 @@ export interface Note {
   body: string;
   user: string;
   uid: string;
+  id?: string;
+  date: string;
 }

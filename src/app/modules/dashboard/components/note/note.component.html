@@ -1,44 +1,15 @@
 <section>
-  <div class="noteContainer">
+  <div class="noteContainer" *ngFor="let note of arrayNotes; let i=index">
     <div class="noteHeader">
-      <img src="../../../../assets/lunita.png" alt="Gato negro asomándose">
+      <img [src]="i%2===0 ? '../../../../assets/artemis.png' : '../../../../assets/lunita.png'" alt="Gatos asomándose">
       <div class="noteButtons">
-        <button class="noteEdit">Editar</button>
-        <button class="noteDelete">Eliminar</button>
+        <button class="noteEdit" (click)="editingNote($event, note)">Editar</button>
+        <button class="noteDelete" (click)="deletingNote(note)">Eliminar</button>
       </div>
     </div>
     <div class="noteBody">
-      <h4>Mi primera nota</h4>
-      <p>Cuando elegimos una de estas tecnologías no solo importamos un pedacito de código para reusar (lo cual es un gran valor per se), si no que adoptamos una arquitectura, una serie de principios de diseño, un paradigma, unas abstracciones, un vocabulario, una comunidad, etc.</p>
-    </div>
-  </div>
-  <div class="noteContainer">
-    <div class="noteHeader">
-      <img src="../../../../assets/artemis.png" alt="Gato negro asomándose">
-      <div class="noteButtons">
-        <button class="noteEdit">Editar</button>
-        <button class="noteDelete">Eliminar</button>
-      </div>
-    </div>
-    <div class="noteBody">
-      <h4>Mi primera nota</h4>
-      <p>Cuando elegimos una de estas tecnologías no solo importamos un pedacito de código para reusar (lo cual es un gran valor per se), si no que adoptamos una arquitectura, una serie de principios de diseño, un paradigma, unas abstracciones, un vocabulario, una comunidad, etc.
-        Cuando elegimos una de estas tecnologías no solo importamos un pedacito de código para reusar (lo cual es un gran valor per se), si no que adoptamos una arquitectura, una serie de principios de diseño, un paradigma, unas abstracciones, un vocabulario, una comunidad, etc.
-        Cuando elegimos una de estas tecnologías no solo importamos un pedacito de código para reusar (lo cual es un gran valor per se), si no que adoptamos una arquitectura, una serie de principios de diseño, un paradigma, unas abstracciones, un vocabulario, una comunidad, etc.
-      </p>
-    </div>
-  </div>
-  <div class="noteContainer">
-    <div class="noteHeader">
-      <img src="../../../../assets/lunita.png" alt="Gato negro asomándose">
-      <div class="noteButtons">
-        <button class="noteEdit">Editar</button>
-        <button class="noteDelete">Eliminar</button>
-      </div>
-    </div>
-    <div class="noteBody">
-      <h4>Mi primera nota</h4>
-      <p>Cuando elegimos una de estas tecnologías no solo importamos un pedacito de código para reusar (lo cual es un gran valor per se), si no que adoptamos una arquitectura, una serie de principios de diseño, un paradigma, unas abstracciones, un vocabulario, una comunidad, etc.</p>
+      <h4>{{note.tittle}}</h4>
+      <p>{{note.body}}</p>
     </div>
   </div>
 </section>
