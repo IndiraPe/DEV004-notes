@@ -15,6 +15,9 @@ export class DashboardComponent {
   note:Note;
   statusNoteTittle:boolean;
   statusNoteBody:boolean;
+  statusButtonSave:boolean;
+  statusButtonEdit:boolean;
+  onePost:Note;
 
   constructor(
     private notesService: NotesService,
@@ -27,8 +30,11 @@ export class DashboardComponent {
 
     this.nameUser = this.getNameUser()
     this.note = {tittle: '', body: '', user: '', uid: '', date: ''}
+    this.onePost = {tittle: '', body: '', user: '', uid: '', date: '', id: ''}
     this.statusNoteTittle = false;
     this.statusNoteBody = false;
+    this.statusButtonSave = true;
+    this.statusButtonEdit = false;
 
   }
 
@@ -39,15 +45,14 @@ export class DashboardComponent {
   }
 
   onNoteForEdit($event:Note) {
-    console.log($event);
-    const tittleValue = this.noteForm.get('tittle')?.value;
-    const bodyValue = this.noteForm.get('body')?.value;
-
     this.noteForm.reset()
     this.noteForm.patchValue({
-      tittle: tittleValue + $event.tittle,
-      body: bodyValue + $event.body
+      tittle: $event.tittle,
+      body: $event.body
     });
+    this.onePost = $event;
+    this.statusButtonSave = false;
+    this.statusButtonEdit = true;
 
   }
 
@@ -72,6 +77,36 @@ export class DashboardComponent {
       .catch((error)=>console.log(error));
     }
 
+  }
+
+  editPost(event:Event) {
+    event.preventDefault()
+    const bodyNote = {
+      tittle: this.note.tittle,
+      body: this.note.body,
+    }
+    if(this.note.tittle === '' && this.note.body === ''){
+      this.statusNoteTittle = true;
+      this.statusNoteBody = true;
+    }else if(this.note.tittle === ''){
+      this.statusNoteTittle = true;
+    }else if(this.note.body === ''){
+      this.statusNoteBody = true;
+    }else{
+      this.notesService.editNote(this.onePost, bodyNote.tittle, bodyNote.body )
+      .then(() => {
+        this.noteForm.reset()
+        this.statusButtonSave = true;
+        this.statusButtonEdit = false;
+      })
+      .catch((error)=>console.log(error));
+    }
+  }
+
+  cancelTheEdition() {
+    this.noteForm.reset()
+    this.statusButtonSave = true;
+    this.statusButtonEdit = false;
   }
 
 }
