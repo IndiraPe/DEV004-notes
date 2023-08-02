@@ -53,7 +53,8 @@ export class RegisterComponent implements OnInit{
     });
   }
 
-  toggleShow() {
+  toggleShow(event:Event) {
+    event.preventDefault()
     this.showPassword = !this.showPassword;
   }
 

@@ -22,8 +22,8 @@
     <div class="messageError" *ngIf="statusErrorPassword">{{showMessageErrorPassword}}</div>
   </div>
   <button class="icon">
-    <span class="material-symbols-outlined" *ngIf="!showPassword" (click)="toggleShow()">visibility</span>
-    <span class="material-symbols-outlined" *ngIf="showPassword" (click)="toggleShow()">visibility_off</span>
+    <span class="material-symbols-outlined" *ngIf="!showPassword" (click)="toggleShow($event)">visibility</span>
+    <span class="material-symbols-outlined" *ngIf="showPassword" (click)="toggleShow($event)">visibility_off</span>
   </button>
   <button type="submit" id="buttonRegister">
     Registrarse

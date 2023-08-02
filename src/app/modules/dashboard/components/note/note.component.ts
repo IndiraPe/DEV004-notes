@@ -10,12 +10,11 @@ import { Note } from 'src/app/shared/interface/notes';
 export class NoteComponent implements OnInit{
 
   @Output() noteForEdit: EventEmitter<Note>;
-  arrayNotes:Array<Note>
+  arrayNotes:Array<Note> = [];
 
   constructor(
     private notesService: NotesService,
     ) {
-    this.arrayNotes = [];
     this.noteForEdit = new EventEmitter();
   }
 
@@ -23,6 +22,8 @@ export class NoteComponent implements OnInit{
     this.notesService.getNotes().subscribe({
       next: (data) => {
         const copyData = [...data]
+        console.log(copyData.filter(uid => uid.uid === '3T7pEfxxVYYwCvX7XRlmJjQQR9P2'));
+
         this.arrayNotes = copyData.sort((a:any, b:any):any => new Date(a.date) > new Date(b.date) ? -1 : new Date(a.date) < new Date(b.date) ? 1 : 0)
       },
       error: (error) => {
@@ -35,17 +36,6 @@ export class NoteComponent implements OnInit{
     if(note.id){
       event.stopPropagation();
       this.noteForEdit.emit(note)
-      // this.notesService.getNoteByID(note.id).subscribe({
-      //   next: (data) => {
-      //     console.log(data);
-
-      //     this.noteForEdit.emit(data)
-      //   },
-      //   error: (error) => {
-      //     console.log(error);
-      //   }
-      // })
-
     }
 
   }

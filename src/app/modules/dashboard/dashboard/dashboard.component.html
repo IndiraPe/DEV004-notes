@@ -5,7 +5,7 @@
     <form [formGroup]="noteForm" (ngSubmit)="saveNote()">
       <!-- <label>Título de la nota</label> -->
       <input
-        placeholder="Título de la nota aquí, max 30 letras..."
+        placeholder="Título de la nota aquí, máximo 30 letras..."
         formControlName="tittle"
         [(ngModel)]="note.tittle"
         maxlength="30"
@@ -22,7 +22,11 @@
         required>
       </textarea>
       <div class="noteError2" *ngIf="statusNoteBody">*Campo obligatorio</div>
-      <button type="submit">Guardar</button>
+      <button class="buttonSavePost" type="submit" *ngIf="statusButtonSave">Guardar</button>
+      <div class="boxButtonEdit" *ngIf="statusButtonEdit">
+        <button class="buttonCancelEdit" (click)="cancelTheEdition()">Cancelar</button>
+        <button class="buttonEditPost" (click)="editPost($event)">Editar</button>
+      </div>
     </form>
     <img src="../../../../assets/lunalive.gif" alt="Gato negro moviendo colita">
   </aside>
