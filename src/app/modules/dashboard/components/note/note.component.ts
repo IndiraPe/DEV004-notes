@@ -22,9 +22,9 @@ export class NoteComponent implements OnInit{
     this.notesService.getNotes().subscribe({
       next: (data) => {
         const copyData = [...data]
-        console.log(copyData.filter(uid => uid.uid === '3T7pEfxxVYYwCvX7XRlmJjQQR9P2'));
-
-        this.arrayNotes = copyData.sort((a:any, b:any):any => new Date(a.date) > new Date(b.date) ? -1 : new Date(a.date) < new Date(b.date) ? 1 : 0)
+        this.arrayNotes = copyData
+          .filter(uid => uid.uid === localStorage.getItem('uid') as string)
+          .sort((a:any, b:any):any => new Date(a.date) > new Date(b.date) ? -1 : new Date(a.date) < new Date(b.date) ? 1 : 0)
       },
       error: (error) => {
         console.log(error);
@@ -37,7 +37,6 @@ export class NoteComponent implements OnInit{
       event.stopPropagation();
       this.noteForEdit.emit(note)
     }
-
   }
 
   deletingNote(note:Note) {
@@ -45,5 +44,4 @@ export class NoteComponent implements OnInit{
       .then(() => console.log('eliminado'))
       .catch((error)=>console.log(error));
   }
-
 }
