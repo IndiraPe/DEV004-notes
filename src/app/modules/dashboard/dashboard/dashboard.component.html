@@ -5,10 +5,10 @@
     <form [formGroup]="noteForm" (ngSubmit)="saveNote()">
       <!-- <label>Título de la nota</label> -->
       <input
-        placeholder="Título de la nota aquí, máximo 30 letras..."
+        placeholder="Título de la nota aquí, máximo 60 letras..."
         formControlName="tittle"
         [(ngModel)]="note.tittle"
-        maxlength="30"
+        maxlength="60"
         (click)="statusNoteTittle=false"
         required>
       <div class="noteError1" *ngIf="statusNoteTittle">*Campo obligatorio</div>
