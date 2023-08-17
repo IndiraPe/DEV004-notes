@@ -3,7 +3,6 @@
     <h3>Hola {{nameUser}}!!!</h3>
     <p>Agrega nuevas notas</p>
     <form [formGroup]="noteForm" (ngSubmit)="saveNote()">
-      <!-- <label>Título de la nota</label> -->
       <input
         placeholder="Título de la nota aquí, máximo 60 letras..."
         formControlName="tittle"
@@ -12,7 +11,6 @@
         (click)="statusNoteTittle=false"
         required>
       <div class="noteError1" *ngIf="statusNoteTittle">*Campo obligatorio</div>
-      <!-- <label>Nota</label> -->
       <textarea
         placeholder="Redacta tu nota aquí, máximo 1500 letras..."
         formControlName="body"
