@@ -21,6 +21,8 @@ export class HeaderComponent {
     this.authService.logout()
       .then(() => {
         this.router.navigate(['/home']);
+        localStorage.removeItem('uid')
+        localStorage.removeItem('email')
       })
       .catch(error => console.log(error));
   }
