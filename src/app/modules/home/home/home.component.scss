@@ -52,6 +52,17 @@ main {
 
     app-login, app-register{
       width: 60%;
+      animation-duration: 2s;
+      animation-name: slidein;
+    }
+
+    @keyframes slidein {
+      from {
+        margin-left: 20%;
+      }
+      to {
+        margin-left: 0%;
+      }
     }
 
     .buttonGoogle{
