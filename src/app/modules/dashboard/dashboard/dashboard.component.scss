@@ -36,6 +36,7 @@ main{
         padding: 5px 10px 5px 5px;
         font-family: 'Delius', cursive;
         color: #3A3A5E;
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
       }
 
       textarea{
@@ -44,6 +45,11 @@ main{
         font-family: 'Delius', cursive;
         padding: 5px 10px 5px 5px;
         color: #3A3A5E;
+      }
+
+      input:focus, textarea:focus {
+        box-shadow: inset 0 0 15px #f4f4f4, 0 0 15px #f4f4f4;
+        border-color: #5C5C83;
       }
 
       .noteError1, .noteError2{
@@ -64,6 +70,11 @@ main{
         margin-left: auto;
         color: #3A3A5E;
         cursor: pointer;
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .buttonSavePost:hover, .buttonCancelEdit:hover, .buttonEditPost:hover {
+        box-shadow: inset 0 0 10px #f4f4f4, 0 0 10px #f4f4f4;
       }
 
       .boxButtonEdit{
