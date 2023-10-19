@@ -32,6 +32,10 @@ section{
           font-family: 'Delius', cursive;
           cursor: pointer;
         }
+
+        button:hover {
+          text-decoration-line: underline;
+        }
       }
     }
 

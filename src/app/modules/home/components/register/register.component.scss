@@ -72,6 +72,12 @@ form{
     font-family: 'Delius', cursive;
     padding: 7px;
     width: 180px;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  #buttonRegister:hover {
+    box-shadow: inset 0 0 15px #333349, 0 0 15px #5C5C83;
   }
 
 }
